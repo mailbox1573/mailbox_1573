@@ -24,27 +24,26 @@
         .ti-quote-right::after { right: -8px; border-left: none; border-bottom: none; }
         .ti-divider { padding: 10px 0; font-size: 0.9rem; font-weight: bold; color: #555; text-align: center; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
         
-        /* 이름 링크 스타일 */
         .ti-name { margin-top: 20px; font-weight: bold; font-size: 1rem; display: flex; align-items: center; color: #333 !important; text-decoration: none !important; margin-bottom: 0px; }
         .ti-name::before { content: "📜"; margin-right: 5px; }
 
-        /* 정보 영역 */
-        .info-row { display: flex; justify-content: space-between; align-items: stretch; margin-top: 100px; margin-bottom: 50px; width: 100%; gap: 20px; }
-        .dday-box { flex: 0.8; font-size: 1.4rem; font-weight: bold; color: #333; display: flex; align-items: center; justify-content: flex-start; gap: 15px; background: #f0f2f3; padding: 12px 30px; border-radius: 12px; }
+        /* 정보 영역 정렬 보정 */
+        .info-row { display: flex; justify-content: space-between; align-items: center; margin-top: 100px; margin-bottom: 50px; width: 100%; gap: 20px; }
+        .dday-box { flex: 0.8; height: 55px; font-size: 1.4rem; font-weight: bold; color: #333; display: flex; align-items: center; justify-content: flex-start; gap: 15px; background: #f0f2f3; padding: 0 30px; border-radius: 12px; box-sizing: border-box; }
 
-        /* 오디오 플레이어 */
-        .audio-player { flex: 1.2; display: flex; align-items: center; gap: 10px; background: #f0f2f3; padding: 12px 18px; border-radius: 12px; justify-content: space-between; position: relative; }
-        .play-pause-btn { cursor: pointer; border: none; background: none; font-size: 0.9rem; flex-shrink: 0; }
-        .time-display { font-size: 0.75rem; color: #444; min-width: 65px; text-align: center; flex-shrink: 0; }
+        /* 오디오 플레이어 높이 고정 및 중앙 정렬 */
+        .audio-player { flex: 1.2; height: 55px; display: flex; align-items: center; gap: 12px; background: #f0f2f3; padding: 0 18px; border-radius: 12px; box-sizing: border-box; position: relative; }
+        .play-pause-btn { cursor: pointer; border: none; background: none; font-size: 0.9rem; flex-shrink: 0; padding: 0; display: flex; align-items: center; }
+        .time-display { font-size: 0.75rem; color: #444; min-width: 65px; text-align: center; flex-shrink: 0; line-height: 1; }
         .progress-container { flex-grow: 1; height: 4px; background: #ccc; border-radius: 2px; position: relative; cursor: pointer; }
         .progress-bar { width: 0%; height: 100%; background: #fff; border-radius: 2px; }
         
-        /* 볼륨 조절 영역 */
-        .volume-wrap { display: flex; align-items: center; position: relative; }
-        .vol-icon { color:#aaa; font-size: 0.8rem; cursor: pointer; padding: 5px; transition: color 0.2s; }
+        /* 볼륨 영역 */
+        .volume-wrap { display: flex; align-items: center; }
+        .vol-icon { color:#aaa; font-size: 0.8rem; cursor: pointer; padding: 5px; transition: color 0.2s; display: flex; align-items: center; }
         .vol-icon:hover { color: #555; }
         .vol-slider { 
-            width: 0; opacity: 0; visibility: hidden; cursor: pointer; accent-color: #aaa; transition: all 0.3s ease; margin-left: 0; 
+            width: 0; opacity: 0; visibility: hidden; cursor: pointer; accent-color: #aaa; transition: all 0.3s ease; margin: 0; 
         }
         .vol-slider.active { 
             width: 60px; opacity: 1; visibility: visible; margin-left: 8px; 
@@ -194,20 +193,17 @@
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-    // D-Day 계산
     document.querySelectorAll('.d-day-val').forEach(el => {
         const start = new Date(el.dataset.date);
         const diff = Math.floor((new Date() - start) / (1000 * 60 * 60 * 24)) + 1;
         el.innerText = diff;
     });
 
-    // 메인 스와이퍼
     const mainSwiper = new Swiper('.main-swiper', {
         loop: true,
         navigation: { nextEl: '.next-btn', prevEl: '.prev-btn' },
     });
 
-    // 로그 이미지 슬라이더
     document.querySelectorAll('.log-slider').forEach(slider => {
         new Swiper(slider, {
             pagination: { el: slider.querySelector('.swiper-pagination'), clickable: true },
@@ -215,26 +211,22 @@
         });
     });
 
-    // 오디오 재생/일시정지
     function togglePlay(btn) {
         const audio = btn.closest('.audio-player').querySelector('.theme-audio');
         if (audio.paused) { audio.play(); btn.innerText = "II"; }
         else { audio.pause(); btn.innerText = "▶"; }
     }
 
-    // 볼륨 슬라이더 토글
     function toggleVolumeSlider(icon) {
         const slider = icon.nextElementSibling;
         slider.classList.toggle('active');
     }
 
-    // 볼륨 변경
     function changeVolume(slider) {
         const audio = slider.closest('.audio-player').querySelector('.theme-audio');
         audio.volume = slider.value;
     }
 
-    // 재생 시간 및 바 업데이트
     document.querySelectorAll('.theme-audio').forEach(audio => {
         audio.ontimeupdate = (e) => {
             const player = e.target.closest('.audio-player');
