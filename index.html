@@ -5,7 +5,7 @@
     <title>💌</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <style>
-        .ti-container { max-width: 950px; margin: 0 auto; font-family: 'Noto Serif KR', 'Nanum Myeongjo', serif; color: #333; padding-bottom: 80px; }
+        .ti-container { max-width: 950px; margin: 0 auto; font-family: 'Noto Serif KR', 'Nanum Myeongjo', serif; color: #333; padding-bottom: 100px; }
         .ti-header { width: 100%; margin-bottom: 30px; }
         .ti-header img { width: 100%; height: auto; display: block; }
         .ti-content-wrap { padding: 0 40px; }
@@ -23,13 +23,28 @@
         .ti-quote-left::after { left: -8px; border-right: none; border-top: none; }
         .ti-quote-right::after { right: -8px; border-left: none; border-bottom: none; }
         .ti-divider { padding: 10px 0; font-size: 0.9rem; font-weight: bold; color: #555; text-align: center; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
-        .ti-name { margin-top: 15px; font-weight: bold; font-size: 1rem; display: flex; align-items: center; color: #333 !important; text-decoration: none !important; margin-bottom: 40px; } /* 1번과 2번 사이 간격 */
+        
+        /* 1번. 캐릭터 이름 구역 (마진 교정) */
+        .ti-name { 
+            margin-top: 20px; 
+            font-weight: bold; 
+            font-size: 1rem; 
+            display: flex; 
+            align-items: center; 
+            color: #333 !important; 
+            text-decoration: none !important; 
+            margin-bottom: 0px; 
+        }
         .ti-name::before { content: "📜"; margin-right: 5px; }
 
-        /* 2. 디데이 & 테마곡 영역 */
+        /* 2번. 디데이 & 테마곡 영역 (겹침 해결 및 간격 확대) */
         .info-row { 
-            display: flex; justify-content: space-between; align-items: center; 
-            margin-bottom: 60px; /* 2번과 3번 사이 간격 */
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            margin-top: 100px;    /* 1번(이름)과 2번 사이 간격 */
+            margin-bottom: 100px; /* 2번과 3번(제목) 사이 간격 */
+            width: 100%;
         }
         .dday-box { font-size: 1.5rem; font-weight: bold; color: #333; display: flex; align-items: center; gap: 10px; }
         .audio-player { 
@@ -41,24 +56,25 @@
         .progress-container { width: 100px; height: 4px; background: #ccc; border-radius: 2px; position: relative; cursor: pointer; }
         .progress-bar { width: 0%; height: 100%; background: #555; border-radius: 2px; }
 
-        /* 3. 제목 및 가로선 */
-        .sec-title { font-size: 2.2rem; font-weight: bold; margin-bottom: 10px; }
-        .sec-hr { border: 0; height: 1px; background: #eee; margin-bottom: 30px; }
+        /* 3번. 제목 및 4번 가로선 */
+        .sec-title { font-size: 2.2rem; font-weight: bold; margin-bottom: 15px; }
+        .sec-hr { border: 0; height: 1px; background: #eee; margin-bottom: 40px; }
 
-        /* 6. 로그 (아코디언) */
+        /* 6. 로그 (텍스트 아코디언) */
         .log-details { border-bottom: 1px solid #eee; padding: 15px 0; }
         .log-details summary { list-style: none; cursor: pointer; font-weight: bold; font-size: 1.15rem; display: flex; align-items: center; }
         .log-details summary::before { content: "▼"; margin-right: 12px; font-size: 0.7rem; }
         .log-content { padding: 25px; font-size: 1rem; line-height: 1.8; color: #444; background: #fafafa; border-radius: 12px; margin-top: 15px; }
 
-        /* 7. 이미지 슬라이더 (로그와 분리됨) */
-        .image-gallery-sec { margin-top: 40px; margin-bottom: 40px; }
+        /* 7. 이미지 슬라이더 (독립 구역) */
+        .image-gallery-sec { margin-top: 50px; margin-bottom: 50px; }
         .log-slider { width: 100%; border-radius: 15px; overflow: hidden; background: #eee; }
         .log-slider .swiper-slide img { width: 100%; height: auto; max-height: 600px; object-fit: cover; display: block; }
 
         /* 8. 페이지 전환 버튼 */
-        .nav-btn-wrap { display: flex; justify-content: center; gap: 20px; margin: 60px 0; }
-        .nav-btn { cursor: pointer; padding: 12px 35px; background: #fff; border: 1px solid #ddd; border-radius: 5px; }
+        .nav-btn-wrap { display: flex; justify-content: center; gap: 20px; margin-top: 80px; }
+        .nav-btn { cursor: pointer; padding: 10px 40px; background: #fff; border: 1px solid #ddd; border-radius: 5px; font-size: 1.2rem; transition: 0.2s; }
+        .nav-btn:hover { background: #f0f0f0; }
     </style>
 </head>
 <body>
@@ -92,7 +108,7 @@
                     </div>
 
                     <div class="info-row">
-                        <div class="dday-box"><span style="font-size: 1.8rem;">🩷</span> <span class="d-day-val" data-date="2025-09-19">0</span> DAYS</div>
+                        <div class="dday-box">🩷 <span class="d-day-val" data-date="2025-01-01">0</span> DAYS</div>
                         <div class="audio-player">
                             <audio class="theme-audio" src="MUSIC_1.mp3"></audio>
                             <button class="play-pause-btn" onclick="togglePlay(this)">▶</button>
@@ -107,7 +123,7 @@
 
                     <details class="log-details">
                         <summary>사담 첫 번째 기록</summary>
-                        <div class="log-content">사담 로그 텍스트 본문 내용이 여기에 들어갑니다.</div>
+                        <div class="log-content">이곳에 텍스트 로그 본문을 입력하세요.</div>
                     </details>
 
                     <div class="image-gallery-sec">
@@ -149,7 +165,7 @@
                     </div>
 
                     <div class="info-row">
-                        <div class="dday-box"><span style="font-size: 1.8rem;">🩷</span> <span class="d-day-val" data-date="2025-08-07">0</span> DAYS</div>
+                        <div class="dday-box">🩷 <span class="d-day-val" data-date="2025-06-01">0</span> DAYS</div>
                         <div class="audio-player">
                             <audio class="theme-audio" src="MUSIC_2.mp3"></audio>
                             <button class="play-pause-btn" onclick="togglePlay(this)">▶</button>
@@ -164,7 +180,7 @@
 
                     <details class="log-details">
                         <summary>청산호 첫 번째 기록</summary>
-                        <div class="log-content">청산호 로그 텍스트 본문 내용이 여기에 들어갑니다.</div>
+                        <div class="log-content">이곳에 텍스트 로그 본문을 입력하세요.</div>
                     </details>
 
                     <div class="image-gallery-sec">
