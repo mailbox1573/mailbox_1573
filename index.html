@@ -41,46 +41,45 @@
         .info-row { 
             display: flex; 
             justify-content: space-between; 
-            align-items: center; 
+            align-items: stretch; /* 높이를 동일하게 맞춤 */
             margin-top: 100px;    
             margin-bottom: 100px; 
             width: 100%;
-            gap: 20px; /* 두 박스 사이의 간격 */
+            gap: 20px; 
         }
 
-        /* 디데이 박스: 회색 배경 추가 및 가로 길이 늘림 */
+        /* 디데이 박스: 플레이어와 동일한 너비(flex: 1) 및 패딩 설정 */
         .dday-box { 
-            font-size: 1.5rem; 
+            flex: 1; /* 균일한 가로 너비 */
+            font-size: 1.4rem; 
             font-weight: bold; 
             color: #333; 
             display: flex; 
             align-items: center; 
+            justify-content: center; /* 중앙 정렬 */
             gap: 15px; 
             background: #f0f2f3; 
-            padding: 12px 40px; /* 좌우 패딩을 늘려 가로 길이 확보 */
-            border-radius: 12px; /* 둥근 직사각형 */
-            min-width: 250px; /* 최소 가로 길이 설정 */
+            padding: 12px 20px; 
+            border-radius: 12px; 
         }
 
-        /* 오디오 플레이어: 회색 배경 추가 및 가로 길이 늘림 */
+        /* 오디오 플레이어: 디데이 박스와 동일한 너비(flex: 1) 설정 */
         .audio-player { 
+            flex: 1; /* 균일한 가로 너비 */
             display: flex; 
             align-items: center; 
-            gap: 15px; 
+            gap: 12px; 
             background: #f0f2f3; 
-            padding: 12px 30px; 
-            border-radius: 12px; /* 둥근 직사각형 */
-            flex-grow: 1; /* 가용한 공간을 차지하도록 설정 */
-            max-width: 500px; /* 너무 과하게 길어지는 것 방지 */
+            padding: 12px 20px; 
+            border-radius: 12px; 
             justify-content: space-between;
         }
 
-        .play-pause-btn { cursor: pointer; border: none; background: none; font-size: 0.9rem; }
-        .time-display { font-size: 0.85rem; color: #444; min-width: 80px; text-align: center; }
-        .progress-container { flex-grow: 1; height: 4px; background: #ccc; border-radius: 2px; position: relative; cursor: pointer; margin: 0 10px; }
-        
-        /* 재생바 색상: 흰색으로 변경 */
+        .play-pause-btn { cursor: pointer; border: none; background: none; font-size: 0.9rem; flex-shrink: 0; }
+        .time-display { font-size: 0.8rem; color: #444; min-width: 75px; text-align: center; flex-shrink: 0; }
+        .progress-container { flex-grow: 1; height: 4px; background: #ccc; border-radius: 2px; position: relative; cursor: pointer; margin: 0 5px; }
         .progress-bar { width: 0%; height: 100%; background: #fff; border-radius: 2px; }
+        .vol-icon { color:#aaa; font-size: 0.9rem; flex-shrink: 0; }
 
         /* 3번. 제목 및 4번 가로선 */
         .sec-title { font-size: 2.2rem; font-weight: bold; margin-bottom: 15px; }
@@ -140,7 +139,7 @@
                             <button class="play-pause-btn" onclick="togglePlay(this)">▶</button>
                             <div class="time-display"><span class="cur-time">0:00</span> / <span class="total-time">0:00</span></div>
                             <div class="progress-container" onclick="seek(event, this)"><div class="progress-bar"></div></div>
-                            <div class="vol-icon" style="color:#aaa; font-size: 0.9rem;">🔊</div>
+                            <div class="vol-icon">🔊</div>
                         </div>
                     </div>
 
@@ -197,7 +196,7 @@
                             <button class="play-pause-btn" onclick="togglePlay(this)">▶</button>
                             <div class="time-display"><span class="cur-time">0:00</span> / <span class="total-time">0:00</span></div>
                             <div class="progress-container" onclick="seek(event, this)"><div class="progress-bar"></div></div>
-                            <div class="vol-icon" style="color:#aaa; font-size: 0.9rem;">🔊</div>
+                            <div class="vol-icon">🔊</div>
                         </div>
                     </div>
 
