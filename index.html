@@ -24,81 +24,42 @@
         .ti-quote-right::after { right: -8px; border-left: none; border-bottom: none; }
         .ti-divider { padding: 10px 0; font-size: 0.9rem; font-weight: bold; color: #555; text-align: center; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
         
-        /* 1번. 캐릭터 이름 구역 */
-        .ti-name { 
-            margin-top: 20px; 
-            font-weight: bold; 
-            font-size: 1rem; 
-            display: flex; 
-            align-items: center; 
-            color: #333 !important; 
-            text-decoration: none !important; 
-            margin-bottom: 0px; 
-        }
+        /* 이름 링크 스타일 */
+        .ti-name { margin-top: 20px; font-weight: bold; font-size: 1rem; display: flex; align-items: center; color: #333 !important; text-decoration: none !important; margin-bottom: 0px; }
         .ti-name::before { content: "📜"; margin-right: 5px; }
 
-        /* 2번. 디데이 & 테마곡 영역 */
-        .info-row { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: stretch; 
-            margin-top: 100px;    
-            margin-bottom: 50px; 
-            width: 100%;
-            gap: 20px; 
-        }
-
-        /* 디데이 박스: 왼쪽 정렬 */
-        .dday-box { 
-            flex: 1; 
-            font-size: 1.4rem; 
-            font-weight: bold; 
-            color: #333; 
-            display: flex; 
-            align-items: center; 
-            justify-content: flex-start; 
-            gap: 15px; 
-            background: #f0f2f3; 
-            padding: 12px 30px; 
-            border-radius: 12px; 
-        }
+        /* 정보 영역 */
+        .info-row { display: flex; justify-content: space-between; align-items: stretch; margin-top: 100px; margin-bottom: 50px; width: 100%; gap: 20px; }
+        .dday-box { flex: 0.8; font-size: 1.4rem; font-weight: bold; color: #333; display: flex; align-items: center; justify-content: flex-start; gap: 15px; background: #f0f2f3; padding: 12px 30px; border-radius: 12px; }
 
         /* 오디오 플레이어 */
-        .audio-player { 
-            flex: 1; 
-            display: flex; 
-            align-items: center; 
-            gap: 12px; 
-            background: #f0f2f3; 
-            padding: 12px 20px; 
-            border-radius: 12px; 
-            justify-content: space-between;
+        .audio-player { flex: 1.2; display: flex; align-items: center; gap: 10px; background: #f0f2f3; padding: 12px 18px; border-radius: 12px; justify-content: space-between; position: relative; }
+        .play-pause-btn { cursor: pointer; border: none; background: none; font-size: 0.9rem; flex-shrink: 0; }
+        .time-display { font-size: 0.75rem; color: #444; min-width: 65px; text-align: center; flex-shrink: 0; }
+        .progress-container { flex-grow: 1; height: 4px; background: #ccc; border-radius: 2px; position: relative; cursor: pointer; }
+        .progress-bar { width: 0%; height: 100%; background: #fff; border-radius: 2px; }
+        
+        /* 볼륨 조절 영역 */
+        .volume-wrap { display: flex; align-items: center; position: relative; }
+        .vol-icon { color:#aaa; font-size: 0.8rem; cursor: pointer; padding: 5px; transition: color 0.2s; }
+        .vol-icon:hover { color: #555; }
+        .vol-slider { 
+            width: 0; opacity: 0; visibility: hidden; cursor: pointer; accent-color: #aaa; transition: all 0.3s ease; margin-left: 0; 
+        }
+        .vol-slider.active { 
+            width: 60px; opacity: 1; visibility: visible; margin-left: 8px; 
         }
 
-        .play-pause-btn { cursor: pointer; border: none; background: none; font-size: 0.9rem; flex-shrink: 0; }
-        .time-display { font-size: 0.8rem; color: #444; min-width: 75px; text-align: center; flex-shrink: 0; }
-        .progress-container { flex-grow: 1; height: 4px; background: #ccc; border-radius: 2px; position: relative; cursor: pointer; margin: 0 5px; }
-        .progress-bar { width: 0%; height: 100%; background: #fff; border-radius: 2px; }
-        .vol-icon { color:#aaa; font-size: 0.9rem; flex-shrink: 0; }
-
-        /* 3번. 제목 및 4번 가로선 */
+        /* 기타 섹션 */
         .sec-title { font-size: 2.2rem; font-weight: bold; margin-bottom: 15px; }
         .sec-hr { border: 0; height: 1px; background: #eee; margin-bottom: 40px; }
-
-        /* 6. 로그 (텍스트 아코디언) */
         .log-details summary { list-style: none; cursor: pointer; font-weight: bold; font-size: 1.15rem; display: flex; align-items: center; }
         .log-details summary::before { content: "▼"; margin-right: 12px; font-size: 0.7rem; }
         .log-content { padding: 25px; font-size: 1rem; line-height: 1.8; color: #444; background: #fafafa; border-radius: 12px; margin-top: 15px; }
-
-        /* 7. 이미지 슬라이더 */
         .image-gallery-sec { margin-top: 50px; margin-bottom: 30px; }
         .log-slider { width: 100%; border-radius: 15px; overflow: hidden; background: #eee; }
         .log-slider .swiper-slide img { width: 100%; height: auto; max-height: 600px; object-fit: cover; display: block; }
-
-        /* 이미지 출처 스타일 추가 */
         .img-credit { text-align: center; font-size: 0.85rem; color: #aaa; margin-top: 10px; font-family: 'Nanum Myeongjo', serif; }
-
-        /* 8. 페이지 전환 버튼 */
         .nav-btn-wrap { display: flex; justify-content: center; gap: 20px; margin-top: 80px; }
         .nav-btn { cursor: pointer; padding: 10px 40px; background: #fff; border: 1px solid #ddd; border-radius: 5px; font-size: 1.2rem; transition: 0.2s; }
         .nav-btn:hover { background: #f0f0f0; }
@@ -141,18 +102,16 @@
                             <button class="play-pause-btn" onclick="togglePlay(this)">▶</button>
                             <div class="time-display"><span class="cur-time">0:00</span> / <span class="total-time">0:00</span></div>
                             <div class="progress-container" onclick="seek(event, this)"><div class="progress-bar"></div></div>
-                            <div class="vol-icon">🔊</div>
+                            <div class="volume-wrap">
+                                <span class="vol-icon" onclick="toggleVolumeSlider(this)">🔊</span>
+                                <input type="range" class="vol-slider" min="0" max="1" step="0.1" value="1" oninput="changeVolume(this)">
+                            </div>
                         </div>
                     </div>
 
                     <div class="sec-title">Our Stories</div>
                     <hr class="sec-hr">
-
-                    <details class="log-details">
-                        <summary>사담 첫 번째 기록</summary>
-                        <div class="log-content">이곳에 텍스트 로그 본문을 입력하세요.</div>
-                    </details>
-
+                    <details class="log-details"><summary>사담 첫 번째 기록</summary><div class="log-content">이곳에 텍스트 로그 본문을 입력하세요.</div></details>
                     <div class="image-gallery-sec">
                         <div class="swiper log-slider">
                             <div class="swiper-wrapper">
@@ -184,7 +143,7 @@
                             <div class="ti-tags">#위안 #사랑 #두려움 #구원 #질투 #욕심 #존경</div>
                             <div class="ti-quote ti-quote-left">6개월이 끝나도 돌려보내고 싶지 않습니다. 이건 감독관으로서의 판단이 아니라, 그냥 나라는 사람의 욕심입니다.</div>
                             <div class="ti-divider">두 사람은 서로에게</div>
-                            <div class="ti-tags">#안심 #연민 #사랑 #행복 #약속</div>
+                            <div class="ti-tags">#안심 #연민 #사랑 #행복 #약속 #귀여움</div>
                             <div class="ti-quote ti-quote-right">아주 바람직한 욕심이네, 주다스! 네가 잡는다면 기꺼이 잡혀줄 테니까, 아주 오랫동안 그래도 돼.</div>
                         </div>
                         <div class="ti-col">
@@ -200,18 +159,16 @@
                             <button class="play-pause-btn" onclick="togglePlay(this)">▶</button>
                             <div class="time-display"><span class="cur-time">0:00</span> / <span class="total-time">0:00</span></div>
                             <div class="progress-container" onclick="seek(event, this)"><div class="progress-bar"></div></div>
-                            <div class="vol-icon">🔊</div>
+                            <div class="volume-wrap">
+                                <span class="vol-icon" onclick="toggleVolumeSlider(this)">🔊</span>
+                                <input type="range" class="vol-slider" min="0" max="1" step="0.1" value="1" oninput="changeVolume(this)">
+                            </div>
                         </div>
                     </div>
 
                     <div class="sec-title">Our Stories</div>
                     <hr class="sec-hr">
-
-                    <details class="log-details">
-                        <summary>청산호 첫 번째 기록</summary>
-                        <div class="log-content">이곳에 텍스트 로그 본문을 입력하세요.</div>
-                    </details>
-
+                    <details class="log-details"><summary>청산호 첫 번째 기록</summary><div class="log-content">이곳에 텍스트 로그 본문을 입력하세요.</div></details>
                     <div class="image-gallery-sec">
                         <div class="swiper log-slider">
                             <div class="swiper-wrapper">
@@ -237,17 +194,20 @@
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
+    // D-Day 계산
     document.querySelectorAll('.d-day-val').forEach(el => {
         const start = new Date(el.dataset.date);
         const diff = Math.floor((new Date() - start) / (1000 * 60 * 60 * 24)) + 1;
         el.innerText = diff;
     });
 
+    // 메인 스와이퍼
     const mainSwiper = new Swiper('.main-swiper', {
         loop: true,
         navigation: { nextEl: '.next-btn', prevEl: '.prev-btn' },
     });
 
+    // 로그 이미지 슬라이더
     document.querySelectorAll('.log-slider').forEach(slider => {
         new Swiper(slider, {
             pagination: { el: slider.querySelector('.swiper-pagination'), clickable: true },
@@ -255,12 +215,26 @@
         });
     });
 
+    // 오디오 재생/일시정지
     function togglePlay(btn) {
         const audio = btn.closest('.audio-player').querySelector('.theme-audio');
         if (audio.paused) { audio.play(); btn.innerText = "II"; }
         else { audio.pause(); btn.innerText = "▶"; }
     }
 
+    // 볼륨 슬라이더 토글
+    function toggleVolumeSlider(icon) {
+        const slider = icon.nextElementSibling;
+        slider.classList.toggle('active');
+    }
+
+    // 볼륨 변경
+    function changeVolume(slider) {
+        const audio = slider.closest('.audio-player').querySelector('.theme-audio');
+        audio.volume = slider.value;
+    }
+
+    // 재생 시간 및 바 업데이트
     document.querySelectorAll('.theme-audio').forEach(audio => {
         audio.ontimeupdate = (e) => {
             const player = e.target.closest('.audio-player');
