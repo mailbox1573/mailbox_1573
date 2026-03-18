@@ -24,70 +24,23 @@
         .ti-quote-right::after { right: -8px; border-left: none; border-bottom: none; }
         .ti-divider { padding: 10px 0; font-size: 0.9rem; font-weight: bold; color: #555; text-align: center; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
         
-        /* 이름 링크 스타일 */
         .ti-name { margin-top: 20px; font-weight: bold; font-size: 1rem; display: flex; align-items: center; color: #333 !important; text-decoration: none !important; margin-bottom: 0px; }
         .ti-name::before { content: "📜"; margin-right: 5px; }
 
-        /* 정보 영역 정렬 및 높이 보정 */
-        .info-row { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; /* 수직 중앙 정렬 */
-            margin-top: 100px;    
-            margin-bottom: 50px; 
-            width: 100%;
-            gap: 20px; 
-        }
-
-        /* 디데이 박스: 높이 고정 및 가로 길이 일치 */
-        .dday-box { 
-            flex: 1; /* 균일한 가로 너비 */
-            height: 60px; /* 명시적 높이 고정 */
-            font-size: 1.4rem; 
-            font-weight: bold; 
-            color: #333; 
-            display: flex; 
-            align-items: center; 
-            justify-content: flex-start; 
-            gap: 15px; 
-            background: #f0f2f3; 
-            padding: 0 30px; /* 상하 패딩 제거 */
-            border-radius: 12px; 
-            box-sizing: border-box; /* 패딩이 높이에 영향을 주지 않도록 */
-        }
-
-        /* 오디오 플레이어: 높이 고정 및 가로 길이 일치 */
-        .audio-player { 
-            flex: 1; /* 균일한 가로 너비 (디데이와 동일) */
-            height: 60px; /* 명시적 높이 고정 */
-            display: flex; 
-            align-items: center; 
-            gap: 10px; 
-            background: #f0f2f3; 
-            padding: 0 20px; /* 상하 패딩 제거 */
-            border-radius: 12px; 
-            justify-content: space-between;
-            position: relative;
-            box-sizing: border-box;
-        }
-
+        .info-row { display: flex; justify-content: space-between; align-items: center; margin-top: 100px; margin-bottom: 50px; width: 100%; gap: 20px; }
+        .dday-box { flex: 1; height: 60px; font-size: 1.4rem; font-weight: bold; color: #333; display: flex; align-items: center; justify-content: flex-start; gap: 15px; background: #f0f2f3; padding: 0 30px; border-radius: 12px; box-sizing: border-box; }
+        .audio-player { flex: 1; height: 60px; display: flex; align-items: center; gap: 10px; background: #f0f2f3; padding: 0 20px; border-radius: 12px; justify-content: space-between; position: relative; box-sizing: border-box; }
         .play-pause-btn { cursor: pointer; border: none; background: none; font-size: 0.9rem; flex-shrink: 0; padding: 0; }
         .time-display { font-size: 0.75rem; color: #444; min-width: 65px; text-align: center; flex-shrink: 0; }
         .progress-container { flex-grow: 1; height: 4px; background: #ccc; border-radius: 2px; position: relative; cursor: pointer; }
         .progress-bar { width: 0%; height: 100%; background: #fff; border-radius: 2px; }
         
-        /* 볼륨 영역 */
         .volume-wrap { display: flex; align-items: center; position: relative; margin-left: 5px; }
         .vol-icon { color:#aaa; font-size: 0.8rem; cursor: pointer; padding: 5px; transition: color 0.2s; display: flex; align-items: center; }
         .vol-icon:hover { color: #555; }
-        .vol-slider { 
-            width: 0; opacity: 0; visibility: hidden; cursor: pointer; accent-color: #aaa; transition: all 0.3s ease; margin-left: 0; 
-        }
-        .vol-slider.active { 
-            width: 60px; opacity: 1; visibility: visible; margin-left: 8px; 
-        }
+        .vol-slider { width: 0; opacity: 0; visibility: hidden; cursor: pointer; accent-color: #aaa; transition: all 0.3s ease; margin-left: 0; }
+        .vol-slider.active { width: 60px; opacity: 1; visibility: visible; margin-left: 8px; }
 
-        /* 기타 섹션 */
         .sec-title { font-size: 2.2rem; font-weight: bold; margin-bottom: 15px; }
         .sec-hr { border: 0; height: 1px; background: #eee; margin-bottom: 40px; }
         .log-details summary { list-style: none; cursor: pointer; font-weight: bold; font-size: 1.15rem; display: flex; align-items: center; }
@@ -107,63 +60,6 @@
 <div class="swiper main-swiper">
     <div class="swiper-wrapper">
         
-        <div class="swiper-slide">
-            <div class="ti-container">
-                <div class="ti-header"><img src="https://i.imgur.com/UzbqQxA.png" /></div>
-                <div class="ti-content-wrap">
-                    <div class="ti-title">사담 (巳潭) | 사&times;서담</div>
-                    <div class="ti-summary">🖋 서로의 가장 본질적인 조각을 이름 삼아 부르는 순간, 낡은 족쇄는 부서져 내리고 오직 서로를 원하는 두 사람만이 세상에 남았다.</div>
-                    
-                    <div class="ti-invisible-grid">
-                        <div class="ti-col">
-                            <img class="ti-img" src="https://i.imgur.com/jr2nTx1.png" />
-                            <a class="ti-name" href="https://www.notion.so/2fbdd57ac0e781669b94dc16564c9bdb" target="_blank">사</a>
-                        </div>
-                        <div class="ti-center-abs">
-                            <div class="ti-tags">#경이 #두려움 #안도 #탐닉 #죄책 #경외 #항복 #집착 #사랑</div>
-                            <div class="ti-quote ti-quote-left">담. 그대에게 하고 싶은 말은 산더미 같은데, 전부 같은 뜻이더구나. 곁에 있어다오.</div>
-                            <div class="ti-divider">두 사람은 서로에게</div>
-                            <div class="ti-tags">#안전 #경이 #미안함 #갈망 #믿음 #욕심 #사랑</div>
-                            <div class="ti-quote ti-quote-right">화의 모든 순간을 제 눈에 담고 싶어요. 하나도 놓치지 않고. 그러니까, 어디에도 가지 않을게요. 약속.</div>
-                        </div>
-                        <div class="ti-col">
-                            <img class="ti-img" src="https://i.imgur.com/qBKZW5X.png" />
-                            <a class="ti-name" href="https://www.notion.so/2fbdd57ac0e78193b382d1c2b9ad0746" target="_blank">서담</a>
-                        </div>
-                    </div>
-
-                    <div class="info-row">
-                        <div class="dday-box">🩷 <span class="d-day-val" data-date="2025-09-19">0</span> DAYS</div>
-                        <div class="audio-player">
-                            <audio class="theme-audio" src="MUSIC_1.mp3"></audio>
-                            <button class="play-pause-btn" onclick="togglePlay(this)">▶</button>
-                            <div class="time-display"><span class="cur-time">0:00</span> / <span class="total-time">0:00</span></div>
-                            <div class="progress-container" onclick="seek(event, this)"><div class="progress-bar"></div></div>
-                            <div class="volume-wrap">
-                                <span class="vol-icon" onclick="toggleVolumeSlider(this)">🔊</span>
-                                <input type="range" class="vol-slider" min="0" max="1" step="0.1" value="1" oninput="changeVolume(this)">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="sec-title">Our Stories</div>
-                    <hr class="sec-hr">
-                    <details class="log-details"><summary>사담 첫 번째 기록</summary><div class="log-content">이곳에 텍스트 로그 본문을 입력하세요.</div></details>
-                    <div class="image-gallery-sec">
-                        <div class="swiper log-slider">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide"><img src="https://i.imgur.com/KY9OExB.jpeg"></div>
-                                <div class="swiper-slide"><img src="https://i.imgur.com/INu5XDw.png"></div>
-                                <div class="swiper-slide"><img src="https://i.imgur.com/i6SMbjK.png"></div>
-                            </div>
-                            <div class="swiper-pagination"></div>
-                        </div>
-                        <div class="img-credit">ⓒ백만단위님</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <div class="swiper-slide">
             <div class="ti-container">
                 <div class="ti-header"><img src="https://i.imgur.com/4DnnD1D.png" /></div>
@@ -222,6 +118,64 @@
                 </div>
             </div>
         </div>
+
+        <div class="swiper-slide">
+            <div class="ti-container">
+                <div class="ti-header"><img src="https://i.imgur.com/UzbqQxA.png" /></div>
+                <div class="ti-content-wrap">
+                    <div class="ti-title">사담 (巳潭) | 사&times;서담</div>
+                    <div class="ti-summary">🖋 서로의 가장 본질적인 조각을 이름 삼아 부르는 순간, 낡은 족쇄는 부서져 내리고 오직 서로를 원하는 두 사람만이 세상에 남았다.</div>
+                    
+                    <div class="ti-invisible-grid">
+                        <div class="ti-col">
+                            <img class="ti-img" src="https://i.imgur.com/jr2nTx1.png" />
+                            <a class="ti-name" href="https://www.notion.so/2fbdd57ac0e781669b94dc16564c9bdb" target="_blank">사</a>
+                        </div>
+                        <div class="ti-center-abs">
+                            <div class="ti-tags">#경이 #두려움 #안도 #탐닉 #죄책 #경외 #항복 #집착 #사랑</div>
+                            <div class="ti-quote ti-quote-left">담. 그대에게 하고 싶은 말은 산더미 같은데, 전부 같은 뜻이더구나. 곁에 있어다오.</div>
+                            <div class="ti-divider">두 사람은 서로에게</div>
+                            <div class="ti-tags">#안전 #경이 #미안함 #갈망 #믿음 #욕심 #사랑</div>
+                            <div class="ti-quote ti-quote-right">화의 모든 순간을 제 눈에 담고 싶어요. 하나도 놓치지 않고. 그러니까, 어디에도 가지 않을게요. 약속.</div>
+                        </div>
+                        <div class="ti-col">
+                            <img class="ti-img" src="https://i.imgur.com/qBKZW5X.png" />
+                            <a class="ti-name" href="https://www.notion.so/2fbdd57ac0e78193b382d1c2b9ad0746" target="_blank">서담</a>
+                        </div>
+                    </div>
+
+                    <div class="info-row">
+                        <div class="dday-box">🩷 <span class="d-day-val" data-date="2025-09-19">0</span> DAYS</div>
+                        <div class="audio-player">
+                            <audio class="theme-audio" src="MUSIC_1.mp3"></audio>
+                            <button class="play-pause-btn" onclick="togglePlay(this)">▶</button>
+                            <div class="time-display"><span class="cur-time">0:00</span> / <span class="total-time">0:00</span></div>
+                            <div class="progress-container" onclick="seek(event, this)"><div class="progress-bar"></div></div>
+                            <div class="volume-wrap">
+                                <span class="vol-icon" onclick="toggleVolumeSlider(this)">🔊</span>
+                                <input type="range" class="vol-slider" min="0" max="1" step="0.1" value="1" oninput="changeVolume(this)">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sec-title">Our Stories</div>
+                    <hr class="sec-hr">
+                    <details class="log-details"><summary>사담 첫 번째 기록</summary><div class="log-content">이곳에 텍스트 로그 본문을 입력하세요.</div></details>
+                    <div class="image-gallery-sec">
+                        <div class="swiper log-slider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><img src="https://i.imgur.com/KY9OExB.jpeg"></div>
+                                <div class="swiper-slide"><img src="https://i.imgur.com/INu5XDw.png"></div>
+                                <div class="swiper-slide"><img src="https://i.imgur.com/i6SMbjK.png"></div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                        <div class="img-credit">ⓒ백만단위님</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
     <div class="nav-btn-wrap">
         <button class="nav-btn prev-btn">←</button>
