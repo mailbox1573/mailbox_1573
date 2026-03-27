@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>💌</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <div class="swiper main-swiper">
+        <div class="swiper-wrapper">
+
+            <!-- 청산호 슬라이드 -->
+            <div class="swiper-slide">
+                <div class="ti-container">
+                    <div class="ti-header">
+                        <img src="https://i.imgur.com/4DnnD1D.png" />
+                    </div>
+                    <div class="ti-content-wrap">
+                        <div class="ti-title">청산호 (靑珊瑚) | J&times;세이디</div>
+                        <div class="ti-summary">
+                            🖋 스스로를 잿빛 고독 속에 가둔 채 건조한 일상을 반복하던 어느 날, 그의 완벽하게 통제된 흑백의 세계에 예고 없이 찬란한 균열이 번졌다.
+                        </div>
+
+                        <div class="ti-invisible-grid">
+                            <div class="ti-col">
+                                <img class="ti-img" src="https://i.imgur.com/r7ASrei.png" />
+                                <a class="ti-name"
+                                    href="https://www.notion.so/J-2f3dd57ac0e780e8aee2cec2f80b16bc?source=copy_link"
+                                    target="_blank">J</a>
+                            </div>
+
+                            <div class="ti-center-abs">
+                                <div class="ti-tags">#위안 #사랑 #두려움 #구원 #질투 #욕심 #존경</div>
+                                <div class="ti-quote ti-quote-left">
+                                    6개월이 끝나도 돌려보내고 싶지 않습니다. 이건 감독관으로서의 판단이 아니라, 그냥 나라는 사람의 욕심입니다.
+                                </div>
+                                <div class="ti-divider">두 사람은 서로에게</div>
+                                <div class="ti-tags">#안심 #연민 #사랑 #행복 #약속 #귀여움</div>
+                                <div class="ti-quote ti-quote-right">
+                                    아주 바람직한 욕심이네, 주다스! 네가 잡는다면 기꺼이 잡혀줄 테니까, 아주 오랫동안 그래도 돼.
+                                </div>
+                            </div>
+
+                            <div class="ti-col">
+                                <img class="ti-img" src="https://i.imgur.com/URX162p.png" />
+                                <a class="ti-name"
+                                    href="https://www.notion.so/2f3dd57ac0e78064b03adf5ae1e6a7c2?source=copy_link"
+                                    target="_blank">세이디</a>
+                            </div>
+                        </div>
+
+                        <div class="info-row">
+                            <div class="dday-box">
+                                🩷 <span class="d-day-val" data-date="2025-08-07">0</span> DAYS
+                            </div>
+
+                            <div class="audio-player">
+                                <audio class="theme-audio" src="MUSIC_2.mp3"></audio>
+                                <button class="play-pause-btn" onclick="togglePlay(this)">▶</button>
+                                <div class="time-display">
+                                    <span class="cur-time">0:00</span> / <span class="total-time">0:00</span>
+                                </div>
+                                <div class="progress-container" onclick="seek(event, this)">
+                                    <div class="progress-bar"></div>
+                                </div>
+                                <div class="volume-wrap">
+                                    <span class="vol-icon" onclick="toggleVolumeSlider(this)">🔊</span>
+                                    <input type="range" class="vol-slider" min="0" max="1" step="0.1" value="1"
+                                        oninput="changeVolume(this)">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sec-title">Our Stories</div>
+                        <hr class="sec-hr">
+
+                        <details class="log-details">
+                            <summary>청산호 첫 번째 기록</summary>
+                            <div class="log-content">천천히 추가될 예정.</div>
+                        </details>
+
+                        <div class="image-gallery-sec">
+                            <div class="swiper log-slider">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide"><img src="https://i.imgur.com/8jseKYm.jpeg" /></div>
+                                    <div class="swiper-slide"><img src="https://i.imgur.com/QqrtLcg.png" /></div>
+                                    <div class="swiper-slide"><img src="https://i.imgur.com/GOBVrjv.png" /></div>
+                                    <div class="swiper-slide"><img src="https://i.imgur.com/KZVJTWL.png" /></div>
+                                    <div class="swiper-slide"><img src="https://i.imgur.com/Ny79DWf.jpeg" /></div>
+                                    <div class="swiper-slide"><img src="https://i.imgur.com/LtKlCyw.png" /></div>
+                                    <div class="swiper-slide"><img src="https://i.imgur.com/zVysXFB.png" /></div>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                            <div class="img-credit">ⓒ백만단위님, 당근님, 뽀잉님, 사리님</div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- 사담 슬라이드 -->
+            <div class="swiper-slide">
+                <div class="ti-container">
+                    <div class="ti-header">
+                        <img src="https://i.imgur.com/UzbqQxA.png" />
+                    </div>
+                    <div class="ti-content-wrap">
+                        <div class="ti-title">사담 (巳潭) | 사&times;서담</div>
+                        <div class="ti-summary">
+                            🖋 서로의 가장 본질적인 조각을 이름 삼아 부르는 순간, 낡은 족쇄는 부서져 내리고 오직 서로를 원하는 두 사람만이 세상에 남았다.
+                        </div>
+
+                        <div class="ti-invisible-grid">
+                            <div class="ti-col">
+                                <img class="ti-img" src="https://i.imgur.com/jr2nTx1.png" />
+                                <a class="ti-name" href="https://www.notion.so/2fbdd57ac0e781669b94dc16564c9bdb"
+                                    target="_blank">사</a>
+                            </div>
+
+                            <div class="ti-center-abs">
+                                <div class="ti-tags">#경이 #두려움 #안도 #탐닉 #죄책 #경외 #항복 #집착 #사랑</div>
+                                <div class="ti-quote ti-quote-left">
+                                    담. 그대에게 하고 싶은 말은 산더미 같은데, 전부 같은 뜻이더구나. 곁에 있어다오.
+                                </div>
+                                <div class="ti-divider">두 사람은 서로에게</div>
+                                <div class="ti-tags">#안전 #경이 #미안함 #갈망 #믿음 #욕심 #사랑</div>
+                                <div class="ti-quote ti-quote-right">
+                                    화의 모든 순간을 제 눈에 담고 싶어요. 하나도 놓치지 않고. 그러니까, 어디에도 가지 않을게요. 약속.
+                                </div>
+                            </div>
+
+                            <div class="ti-col">
+                                <img class="ti-img" src="https://i.imgur.com/qBKZW5X.png" />
+                                <a class="ti-name" href="https://www.notion.so/2fbdd57ac0e78193b382d1c2b9ad0746"
+                                    target="_blank">서담</a>
+                            </div>
+                        </div>
+
+                        <div class="info-row">
+                            <div class="dday-box">
+                                🩷 <span class="d-day-val" data-date="2025-09-19">0</span> DAYS
+                            </div>
+
+                            <div class="audio-player">
+                                <audio class="theme-audio" src="MUSIC_1.mp3"></audio>
+                                <button class="play-pause-btn" onclick="togglePlay(this)">▶</button>
+                                <div class="time-display">
+                                    <span class="cur-time">0:00</span> / <span class="total-time">0:00</span>
+                                </div>
+                                <div class="progress-container" onclick="seek(event, this)">
+                                    <div class="progress-bar"></div>
+                                </div>
+                                <div class="volume-wrap">
+                                    <span class="vol-icon" onclick="toggleVolumeSlider(this)">🔊</span>
+                                    <input type="range" class="vol-slider" min="0" max="1" step="0.1" value="1"
+                                        oninput="changeVolume(this)">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sec-title">Our Stories</div>
+                        <hr class="sec-hr">
+
+                        <details class="log-details">
+                            <summary>사담 첫 번째 기록</summary>
+                            <div class="log-content">천천히 추가될 예정.</div>
+                        </details>
+
+                        <div class="image-gallery-sec">
+                            <div class="swiper log-slider">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide"><img src="https://i.imgur.com/KY9OExB.jpeg" /></div>
+                                    <div class="swiper-slide"><img src="https://i.imgur.com/INu5XDw.png" /></div>
+                                    <div class="swiper-slide"><img src="https://i.imgur.com/i6SMbjK.png" /></div>
+                                    <div class="swiper-slide"><img src="https://i.imgur.com/a8fwJUo.png" /></div>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                            <div class="img-credit">ⓒ백만단위님</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="nav-btn-wrap">
+            <button class="nav-btn prev-btn">←</button>
+            <button class="nav-btn next-btn">→</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
